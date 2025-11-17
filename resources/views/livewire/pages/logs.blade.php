@@ -29,3 +29,7 @@
         </flux:card>
     @endforeach
 </div>
+
+<x-slot:footer>
+    <flux:button :href="route('logs.create')" icon="plus">Add</flux:button>
+</x-slot:footer>

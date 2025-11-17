@@ -35,6 +35,11 @@ class CreateLog extends Component
         // $this->image = $path;
     }
 
+    public function recordVoice(): void
+    {
+        $this->voice = 'tmp/voice.mp3';
+    }
+
     public function removePhoto(): void
     {
         $this->image = null;

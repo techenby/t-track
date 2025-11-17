@@ -18,6 +18,14 @@
     {{ $slot }}
 </flux:main>
 
+@isset ($footer)
+<div class="fixed bottom-0 left-0 w-full z-1 pb-[var(--inset-bottom)] pl-6 pr-6">
+    <div class="flex items-center justify-center gap-8">
+        {{ $footer }}
+    </div>
+</div>
+@endisset
+
 @fluxScripts
 </body>
 </html>
