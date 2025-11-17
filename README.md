@@ -29,3 +29,12 @@ A [NativePHP mobile](https://nativephp.com/docs/mobile/1/getting-started/environ
 - Required repository secrets (set in GitHub Actions secrets):
     - `FLUX_USERNAME`: Flux account email
     - `FLUX_LICENSE_KEY`: Get from Flux dashboard
+
+## ToDo
+
+- [ ] Create log
+- [ ] Listen to audio
+- [ ] View photo
+- [ ] Share
+- [ ] Icon
+- [ ] Splash
