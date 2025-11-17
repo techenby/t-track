@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Log extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'voice_path',
+        'image_path',
+    ];
 }

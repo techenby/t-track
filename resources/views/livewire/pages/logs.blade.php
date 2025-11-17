@@ -3,14 +3,14 @@
         <flux:callout icon="bell" color="sky" inline>
             <flux:callout.heading>Welcome, let's create your first log!</flux:callout.heading>
             <x-slot name="controls">
-                <flux:button icon="arrow-right" variant="ghost" />
+                <flux:button :href="route('logs.create')" icon="arrow-right" variant="ghost" />
             </x-slot>
         </flux:callout>
     @elseif ($this->logs->first()->created_at->diffInDays() > 6.75)
         <flux:callout icon="bell" color="sky" inline>
             <flux:callout.heading>Time to Track!</flux:callout.heading>
             <x-slot name="controls">
-                <flux:button icon="arrow-right" variant="ghost" />
+                <flux:button :href="route('logs.create')" icon="arrow-right" variant="ghost" />
             </x-slot>
         </flux:callout>
     @endif

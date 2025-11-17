@@ -7,12 +7,12 @@ use Livewire\Livewire;
 
 describe('smoke', function () {
     beforeEach(function () {
-      Log::factory()->count(2)
-          ->state(new Sequence(
-              ['created_at' => '2025-11-10 12:00:00'],
-              ['created_at' => '2025-11-03 12:00:00'],
-          ))
-          ->create();
+        Log::factory()->count(2)
+            ->state(new Sequence(
+                ['created_at' => '2025-11-10 12:00:00'],
+                ['created_at' => '2025-11-03 12:00:00'],
+            ))
+            ->create();
     });
 
     it('route renders successfully', function () {
@@ -29,4 +29,3 @@ describe('smoke', function () {
             ->assertSee('Mon Nov 3, 2025 @ 6:00am');
     });
 });
-
