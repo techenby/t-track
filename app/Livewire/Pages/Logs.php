@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 
-class Dashboard extends Component
+class Logs extends Component
 {
     #[Computed]
     public function logs(): Collection

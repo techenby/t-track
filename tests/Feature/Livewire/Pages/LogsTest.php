@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Pages\Dashboard;
+use App\Livewire\Pages\Logs;
 use App\Models\Log;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Livewire\Livewire;
@@ -16,14 +16,14 @@ describe('smoke', function () {
     });
 
     it('route renders successfully', function () {
-        $this->get(route('dashboard'))
+        $this->get(route('logs'))
             ->assertOk()
             ->assertSee('Mon Nov 10, 2025 @ 6:00am')
             ->assertSee('Mon Nov 3, 2025 @ 6:00am');
     });
 
     it('component renders successfully', function () {
-        Livewire::test(Dashboard::class)
+        Livewire::test(Logs::class)
             ->assertOk()
             ->assertSee('Mon Nov 10, 2025 @ 6:00am')
             ->assertSee('Mon Nov 3, 2025 @ 6:00am');

@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Pages\Dashboard;
+use App\Livewire\Pages\Logs;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Dashboard::class)->name('dashboard');
+Route::get('/', Logs::class)->name('logs');
