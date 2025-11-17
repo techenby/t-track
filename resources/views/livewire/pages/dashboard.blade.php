@@ -16,7 +16,7 @@
     @endif
     @foreach ($this->logs as $log)
         <flux:card size="sm" class="space-y-2">
-            <flux:heading level="2" size="lg">{{ $log->created_at->timezone('America/Chicago')->format('D M d, Y @ g:ia') }}</flux:heading>
+            <flux:heading level="2" size="lg">{{ $log->created_at->timezone('America/Chicago')->format('D M j, Y @ g:ia') }}</flux:heading>
             <div class="flex space-x-2">
                 <flux:icon.microphone @class([
                     'text-gray-400 dark:text-gray-500' => ! $log->voice_path
