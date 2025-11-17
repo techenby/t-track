@@ -1,6 +1,6 @@
 # T-Track
 
-A [NativePHP mobile](https://nativephp.com/docs/mobile/1/getting-started/environment-setup) app for tracking changes in my voice and body from HRT. Weekly I'll log a picture and a voice recording, so I have a log of changes over time.
+A [NativePHP mobile](https://nativephp.com/docs/mobile/1/getting-started/environment-setup) app for tracking changes in my voice and body from HRT. Weekly I'll log a picture and a voice recording, so I have a log of changes over time. I'm sure an app like this already exists, though it's a great excuse to play with NativePHP.
 
 **PHP:** 8.4  
 **Laravel:** 12  
