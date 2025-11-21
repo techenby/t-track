@@ -12,6 +12,17 @@
             <flux:label>Take Photo</flux:label>
             <div>
                 <flux:button icon="camera" wire:click="takePhoto"></flux:button>
+
+            <div class="mt-3 flex flex-col gap-2">
+                @if ($photo)
+                    <flux:file-item
+                        :image="$photoDataUrl"
+                    >
+                        <x-slot name="actions">
+                            <flux:file-item.remove wire:click="removePhoto" aria-label="Remove photo" />
+                        </x-slot>
+                    </flux:file-item>
+                @endif
             </div>
             <flux:error name="image" />
         </flux:field>
