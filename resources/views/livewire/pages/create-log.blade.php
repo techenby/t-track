@@ -1,17 +1,18 @@
 <div>
     <form wire:submit="save" class="space-y-2">
         <flux:field>
-            <flux:label>Record Voice</flux:label>
+            <flux:label class="sr-only">Record Voice</flux:label>
             <div>
-                <flux:button icon="microphone" wire:click="recordVoice"></flux:button>
+                <flux:button icon="microphone" wire:click="recordVoice">Record Voice</flux:button>
             </div>
 
             <flux:error name="voice" />
         </flux:field>
         <flux:field>
-            <flux:label>Take Photo</flux:label>
+            <flux:label class="sr-only">Take Photo</flux:label>
             <div>
-                <flux:button icon="camera" wire:click="takePhoto"></flux:button>
+                <flux:button icon="camera" wire:click="takePhoto">Take Photo</flux:button>
+            </div>
 
             <div class="mt-3 flex flex-col gap-2">
                 @if ($photo)
