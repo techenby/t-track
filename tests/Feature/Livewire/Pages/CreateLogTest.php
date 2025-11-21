@@ -16,23 +16,23 @@ describe('smoke', function () {
 });
 
 describe('validation', function () {
-    it('required voice if image is not set', function () {
+    it('required voice if photo is not set', function () {
         Livewire::test(CreateLog::class)
             ->assertSet('voice', null)
-            ->assertSet('image', null)
+            ->assertSet('photo', null)
             ->call('save')
             ->assertHasErrors('voice')
-            ->set('image', 'tmp/image.jpg')
+            ->set('photo', 'tmp/capture.jpg')
             ->call('save')
             ->assertHasNoErrors();
     });
 
-    it('required image if voice is not set', function () {
+    it('required photo if voice is not set', function () {
         Livewire::test(CreateLog::class)
             ->assertSet('voice', null)
-            ->assertSet('image', null)
+            ->assertSet('photo', null)
             ->call('save')
-            ->assertHasErrors('image')
+            ->assertHasErrors('photo')
             ->set('voice', 'tmp/voice.mp3')
             ->call('save')
             ->assertHasNoErrors();
@@ -43,12 +43,12 @@ describe('saving', function () {
     it('can create a log', function () {
         Livewire::test(CreateLog::class)
             ->set('voice', 'tmp/voice.mp3')
-            ->set('image', 'tmp/image.jpg')
+            ->set('photo', 'tmp/capture.jpg')
             ->call('save');
 
         $this->assertDatabaseHas('logs', [
             'voice_path' => 'tmp/voice.mp3',
-            'image_path' => 'tmp/image.jpg',
+            'photo_path' => 'tmp/capture.jpg',
         ]);
     });
 });

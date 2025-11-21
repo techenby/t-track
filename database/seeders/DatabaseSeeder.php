@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
                 fn (Sequence $sequence) => [
                     'created_at' => $start->addWeek(),
                     'voice_path' => rand(0, 1) ? null : 'fake-voice.mp3',
-                    'image_path' => rand(0, 1) ? null : 'fake-image.jpg',
+                    'photo_path' => rand(0, 1) ? null : 'fake-photo.jpg',
                 ],
             ))
             ->create();

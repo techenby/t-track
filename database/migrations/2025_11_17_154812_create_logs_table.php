@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->text('voice_path')->nullable();
-            $table->text('image_path')->nullable();
+            $table->text('photo_path')->nullable();
             $table->timestamps();
         });
     }

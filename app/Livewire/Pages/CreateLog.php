@@ -11,18 +11,19 @@ use Native\Mobile\Facades\Camera;
 class CreateLog extends Component
 {
     public $voice;
-    public $image;
+    public $photo;
+    public $photoDataUrl;
 
     public function save(): void
     {
         $this->validate([
-            'voice' => 'required_if:image,null',
-            'image' => 'required_if:voice,null',
+            'voice' => 'required_if:photo,null',
+            'photo' => 'required_if:voice,null',
         ]);
 
         Log::create([
             'voice_path' => $this->voice,
-            'image_path' => $this->image,
+            'photo_path' => $this->photo,
         ]);
 
         $this->redirectRoute('logs');
@@ -31,8 +32,12 @@ class CreateLog extends Component
     #[On('native:' . PhotoTaken::class)]
     public function handlePhotoTaken(string $path): void
     {
-        dd($path);
-        // $this->image = $path;
+        $this->photo = $path;
+
+        $data = base64_encode(file_get_contents($path));
+        $mime = mime_content_type($path);
+
+        $this->photoDataUrl = "data:$mime;base64,$data";
     }
 
     public function recordVoice(): void
@@ -42,7 +47,7 @@ class CreateLog extends Component
 
     public function removePhoto(): void
     {
-        $this->image = null;
+        $this->reset(['photo', 'photoDataUrl']);
     }
 
     public function takePhoto(): void

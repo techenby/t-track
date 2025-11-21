@@ -23,7 +23,7 @@
                 ])/>
 
                 <flux:icon.camera @class([
-                    'text-gray-400 dark:text-gray-500' => ! $log->image_path
+                    'text-gray-400 dark:text-gray-500' => ! $log->photo_path
                 ])/>
             </div>
         </flux:card>

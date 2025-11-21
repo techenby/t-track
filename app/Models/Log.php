@@ -11,6 +11,6 @@ class Log extends Model
 
     protected $fillable = [
         'voice_path',
-        'image_path',
+        'photo_path',
     ];
 }
